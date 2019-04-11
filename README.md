@@ -30,4 +30,8 @@ python setup.py install
 
 ### tableausdkExtension
 
-The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference. Code from the session can be found [here](https://www.dropbox.com/sh/lztdogubf20498e/AADJJpb_KO4g2m_CF1-SSc_Sa/TC18%20-%20Developer%20Track/Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models?dl=0&subfolder_nav_tracking=1). A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be). A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf). 
+The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference^[Named sample_2.py in the tableausdkExtension folder]. 
+
+* Code from the session can be found [here](https://www.dropbox.com/sh/lztdogubf20498e/AADJJpb_KO4g2m_CF1-SSc_Sa/TC18%20-%20Developer%20Track/Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models?dl=0&subfolder_nav_tracking=1). 
+* A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be). 
+* A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf). 
