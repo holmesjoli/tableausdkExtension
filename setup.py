@@ -11,7 +11,7 @@ setuptools.setup(
     description = "Tableau for TJJD",
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "XXX",
+    url = "https://github.com/holmesjoli/tableausdkExtension",
     packages = setuptools.find_packages()
 )
 
