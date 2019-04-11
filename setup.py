@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name = "tab_tjjd",
-    version = "0.0.0.9999",
+    name = "tableausdkExtension",
+    version = "0.0.1.0",
     author = "Joli Holmes",
     author_email = "jh111@rice.edu",
     description = "Tableau for TJJD",
