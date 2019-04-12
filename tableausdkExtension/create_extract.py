@@ -28,9 +28,18 @@ class create_extract(object):
         self.createHyper()
         self.tearDown()
 
+    def checkFileExt(self):
+        """
+        Checks that the file extension is .hyper
+        """
+
+        if not self.filename.endswith(".hyper"):
+            raise Exception("Filename must end with .hyper")
+
     def setUp(self):
         """Setup for the extract creation"""
 
+        self.checkFileExt()
         ExtractAPI.initialize()
         self.extract = Extract(self.filename)
         self.extract_exists = self.extract.hasTable('Extract')
