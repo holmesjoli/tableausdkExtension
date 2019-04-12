@@ -50,5 +50,3 @@ class map_cols(object):
             return self.type[key]
         except KeyError:
             raise Exception("Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys())))
-
-
