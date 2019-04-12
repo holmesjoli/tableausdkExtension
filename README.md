@@ -20,7 +20,7 @@ The tableausdkExtension package simply builds on the tableausdk package and auto
 
 ### tableausdk
 1. Download [tableauSDK package](https://downloads.tableau.com/tssoftware/Tableau-SDK-Python-Win-64Bit-10-3-19.zip)
-2. Move the downloaded package from the Downloads folder to the folder where you keep your Python repositories and rename the file to tableausdk^[This makes it easier to install the package later on and is consistent with how many Python packages are named].
+2. Move the downloaded package from `Downloads` to the folder where you keep your Python repositories and rename the file to tableausdk.
 3. Install the package. In Bash (Terminal/Command Line) navigate to the place where the package is stored. Navigate to the top folder, e.g. `cd tableausdk`. Then build and install the package using the following commands. 
 
 ```
@@ -30,8 +30,12 @@ python setup.py install
 
 ### tableausdkExtension
 
-The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference^[Named sample_2.py in the tableausdkExtension folder]. 
+1. Clone the [repository](https://github.com/holmesjoli/tableausdkExtension)
+2. Install the package by navigating to the project folder and installing `pip install -e .`
+
+The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference(Named tc2018_sample.py in the tableausdkExtension folder). 
 
 * Code from the session can be found [here](https://www.dropbox.com/sh/lztdogubf20498e/AADJJpb_KO4g2m_CF1-SSc_Sa/TC18%20-%20Developer%20Track/Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models?dl=0&subfolder_nav_tracking=1). 
 * A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be). 
 * A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf). 
+
