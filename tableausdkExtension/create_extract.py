@@ -1,5 +1,3 @@
-import sys
-
 from tableausdk.Exceptions import TableauException
 from tableausdk.HyperExtract import ExtractAPI, Extract, TableDefinition, Row
 from tableausdk.Types import Type, Collation
