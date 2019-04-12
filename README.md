@@ -39,3 +39,29 @@ The tableausdkExtension package functions were developed based on code presented
 * A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be). 
 * A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf). 
 
+#### Sample Code
+
+```
+import pandas as pd
+
+from create_extract import create_extract
+
+filename = "test_file.hyper"
+df = pd.DataFrame({"col1": [1,2,3,4], 
+                   "col2": ["a", "b", "c", "d"],
+                   "col3": [1.0, 2.0, 3.0, 4.0]})
+
+col_types = {"col1": "INTEGER",
+             "col2": "CHAR_STRING",
+             "col3": "DOUBLE"}
+
+create_extract(filename, df, col_types)
+```
+
+The class `create_extract` takes three inputs, filename, df, col_types. Filename must have the extension `.hyper`, indicating it's a Tableau extract file. Df is the dataframe. Col_types in a mapping of column names to column types as a dictionary. The excepted column types are: INTEGER, CHAR_STRING, DOUBLE, BOOLEAN, DATETIME, DATE, SPATIAL. 
+
+Running create_extract generates three files in the directory which the code is run from:
+
+* The hyper file, which can be used in Tableau
+* A log called DataExtract.log
+* A hyper_db file
