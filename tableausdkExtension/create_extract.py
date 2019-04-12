@@ -1,15 +1,14 @@
 import sys
-import os
-import pandas as pd
+#import os
+#import pandas as pd
 
 from tableausdk.Exceptions import TableauException
 from tableausdk.HyperExtract import ExtractAPI, Extract, TableDefinition, Row
 from tableausdk.Types import Type, Collation
 
-from utils.config import read_yaml
-from tab_tjjd.extract_helper import map_schema, map_col
+from extract_helper import map_schema, map_cols
 
-class main(object):
+class create_extract(object):
 
     def __init__(self, filename, df, col_types):
         """
@@ -17,7 +16,7 @@ class main(object):
         :type filename: string
         :param df: the data to turn into a hyper file
         :type df: pandas dataframe
-        :param col_types: a mapping of column names to column types
+        :param col_types: a mapping of column names to column types, e.g. {VAR1: INTEGER}
         :type col_types: dct
         """
         
@@ -61,7 +60,7 @@ class main(object):
 
             for jdx, key in enumerate(self.col_types):
                 
-                func = map_col(extract_row).get_type(self.col_types[key])
+                func = map_cols(extract_row).get_type(self.col_types[key])
                 func(jdx, self.df.iloc[idx][key])
 
             table.insert(extract_row)
