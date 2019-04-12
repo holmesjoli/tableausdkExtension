@@ -27,7 +27,6 @@ Additionally, building a Tableau extract through code is important because the e
 What's in the extension? 
 The tableausdkExtension package simply builds on the tableausdk package and automates some of the functionalities developed by Tableau.
 
-
 ## Getting Started
 
 ### tableausdk
