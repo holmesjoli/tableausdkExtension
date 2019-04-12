@@ -11,7 +11,7 @@ class map_schema(object):
         A dictionary of schema types
         """
 
-        self.dct = {"CHAR_STRING": Type.CHAR_STRING,
+        self.type = {"CHAR_STRING": Type.CHAR_STRING,
                     "INTEGER": Type.INTEGER,
                     "DOUBLE": Type.DOUBLE,
                     "BOOLEAN": Type.BOOLEAN,
@@ -21,7 +21,7 @@ class map_schema(object):
     
     def get_type(self, key):
 
-        return self.dct[key]
+        return self.type[key]
 
 class map_cols(object):
 
@@ -30,7 +30,7 @@ class map_cols(object):
         A dictionary of functions to create to populate the columns 
         """
 
-        self.dct = {"NULL": lambda col_idx, value: extract_row.setNull(col_idx, value),
+        self.type = {"NULL": lambda col_idx, value: extract_row.setNull(col_idx, value),
                     "CHAR_STRING": lambda col_idx, value: extract_row.setCharString(col_idx, value),
                     "INTEGER": lambda col_idx, value: extract_row.setLongInteger(col_idx, value),
                     "DOUBLE": lambda col_idx, value: extract_row.setDouble(col_idx, value),
@@ -42,6 +42,6 @@ class map_cols(object):
 
     def get_type(self, key):
 
-        return self.dct[key]
+        return self.type[key]
 
 
