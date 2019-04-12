@@ -1,6 +1,3 @@
-import os
-import numpy as np
-
 from tableausdk.Types import Type
 from tableausdk.HyperExtract import Row
 
@@ -19,7 +16,7 @@ class map_schema(object):
                     "DATE": Type.DATE,
                     "SPATIAL": Type.SPATIAL}
     
-    def get_type(self, dct, key):
+    def get_type(self, key):
         """
         Returns the type based off the key
         """
@@ -45,7 +42,7 @@ class map_cols(object):
                     "SPATIAL": lambda col_idx, value: extract_row.setSpatial(col_idx, value),
                     "DURATION": lambda col_idx, value: extract_row.setDuration(col_idx, value)}
 
-    def get_type(self, dct, key):
+    def get_type(self, key):
         """
         Returns the type based off the key
         """
