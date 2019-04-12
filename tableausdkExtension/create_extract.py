@@ -1,6 +1,4 @@
 import sys
-#import os
-#import pandas as pd
 
 from tableausdk.Exceptions import TableauException
 from tableausdk.HyperExtract import ExtractAPI, Extract, TableDefinition, Row
@@ -29,9 +27,7 @@ class create_extract(object):
         self.tearDown()
 
     def checkFileExt(self):
-        """
-        Checks that the file extension is .hyper
-        """
+        """Checks that the file extension is .hyper"""
 
         if not self.filename.endswith(".hyper"):
             raise Exception("Filename must end with .hyper")
