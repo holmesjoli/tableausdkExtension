@@ -31,6 +31,8 @@ The tableausdkExtension package simply builds on the tableausdk package and auto
 
 ### Build Environment
 
+It's recommended to build an environment, but not absolutely necessary. TableausdkExtension has been tested on the included environment however. 
+
 1. Create the environment `conda create --name tableau --file requirements.txt`
 2. Activate the environment `source activate tableau` 
 
