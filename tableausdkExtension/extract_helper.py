@@ -4,7 +4,7 @@ import numpy as np
 from tableausdk.Types import Type
 from tableausdk.HyperExtract import Row
 
-class schema_types(object):
+class map_schema(object):
     
     def __init__(self):
         """
@@ -23,7 +23,7 @@ class schema_types(object):
 
         return self.dct[key]
 
-class col_types(object):
+class map_cols(object):
 
     def __init__(self, extract_row):
         """
