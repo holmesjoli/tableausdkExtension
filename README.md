@@ -4,11 +4,23 @@ tableausdkExtension builds on the [Tableau SDK](https://onlinehelp.tableau.com/c
 
 ## About Tableau SDK
 
-[Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm) is a set of packages maintained by Tableau. It gives users of different programming languages the ability to build Tableau data extracts which can then be loaded in Tableau.
+[Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm) is a set of packages maintained by Tableau. It gives programmers the ability to build Tableau data extracts which can then be loaded in Tableau.
 
-### Why is this important?
+### Use Cases
 
-Users may wonder why this is useful since Tableau already has many data connection capabilities (e.g. Excel, csv files, SQL Server, etc. ). For Data Analysts and Scientists, many of us still want to do data management and data validation in Python and then connect the cleaned data to Tableau. It's extremely useful for automatting pipelines, such that data validation, data management scripts, and extract builder steps can all be automatted and called using one Python script. The other important thing of note, is that building the extract requires the user to explicitly declare the types of each column in the dataset. Although, Tableau is very good at guessing column types, it still doesn't get it right 100% of the time, which then requires the user to manually change the column type in the Tableau UI. Again, for the sake of automation this is a pain point and could potentially cause errors if a user is utilizing a pre-build dashboard with new data. 
+Users may wonder why this is useful since Tableau already has many data connection capabilities (e.g. Excel, csv files, SQL Server, etc.). Additionally, Tableau has the ability to do basic data cleaning capabilities such as splitting columns, changing column types, filtering data, etc.
+
+#### Pipeline Automation
+
+However, many people who touch data prefer to do management and data validation in tradition data analysis software and then connect the cleaned data to Tableau. Combining data validation, data management, and extract creation into one Python script is also very useful for automatting pipelines. 
+
+#### Best Practices
+
+Automatting, multiple parts of an ETL into one script helps save time, but also allows users to continue practicing best practices such as version controlling code. 
+
+#### Explicit Type Declaration
+
+Additionally, building a Tableau extract through code is important because the extract requires the user to explicitly declare the types of each column in the dataset. Although,Tableau is very good at guessing column types, it still doesn't get it right 100% of the time, which then requires the user to manually change the column type in the Tableau UI. This is an important step for quality control. 
 
 ### What's in tableausdkExtension
 
@@ -58,10 +70,14 @@ col_types = {"col1": "INTEGER",
 create_extract(filename, df, col_types)
 ```
 
-The class `create_extract` takes three inputs, filename, df, col_types. Filename must have the extension `.hyper`, indicating it's a Tableau extract file. Df is the dataframe. Col_types in a mapping of column names to column types as a dictionary. The excepted column types are: INTEGER, CHAR_STRING, DOUBLE, BOOLEAN, DATETIME, DATE, SPATIAL. 
+The class `create_extract` takes three inputs, filename, df, col_types
+
+* **filename** is the filename of the Tableau extract file, it must have the extension `.hyper`
+* **df** is the dataframe to convert to a hyper file
+* **col_types** is a mapping of column names to column types as a dictionary. The excepted column types are: INTEGER, CHAR_STRING, DOUBLE, BOOLEAN, DATETIME, DATE, SPATIAL. 
 
 Running create_extract generates three files in the directory which the code is run from:
 
-* The hyper file, which can be used in Tableau
-* A log called DataExtract.log
-* A hyper_db file
+* filename.hyper
+* DataExtract.log
+* hyper_db
