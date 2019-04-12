@@ -29,7 +29,15 @@ The tableausdkExtension package simply builds on the tableausdk package and auto
 
 ## Getting Started
 
+### Build Environment
+
+1. Create the environment `conda create --name tableau --file requirements.txt`
+2. Activate the environment `source activate tableau` 
+
+Note: environment can be named whatever, it doesn't have to be called tableau
+
 ### tableausdk
+
 1. Download [tableauSDK package](https://downloads.tableau.com/tssoftware/Tableau-SDK-Python-Win-64Bit-10-3-19.zip)
 2. Move the downloaded package from `Downloads` to the folder where you keep your Python repositories and rename the file to tableausdk.
 3. Install the package. In Bash (Terminal/Command Line) navigate to the place where the package is stored. Navigate to the top folder, e.g. `cd tableausdk`. Then build and install the package using the following commands. 
