@@ -2,7 +2,7 @@ import unittest
 import os
 import pandas as pd
 
-from create_extract import create_extract
+from tableausdkExtension.create_extract import create_extract
 
 class CreateExtractTestClass(unittest.TestCase):
  
