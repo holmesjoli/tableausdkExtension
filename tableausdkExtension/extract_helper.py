@@ -19,9 +19,14 @@ class map_schema(object):
                     "DATE": Type.DATE,
                     "SPATIAL": Type.SPATIAL}
     
-    def get_type(self, key):
-
-        return self.type[key]
+    def get_type(self, dct, key):
+        """
+        Returns the type based off the key
+        """
+        try: 
+            return self.type[key]
+        except KeyError:
+            raise Exception("Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys())))
 
 class map_cols(object):
 
@@ -40,8 +45,13 @@ class map_cols(object):
                     "SPATIAL": lambda col_idx, value: extract_row.setSpatial(col_idx, value),
                     "DURATION": lambda col_idx, value: extract_row.setDuration(col_idx, value)}
 
-    def get_type(self, key):
-
-        return self.type[key]
+    def get_type(self, dct, key):
+        """
+        Returns the type based off the key
+        """
+        try: 
+            return self.type[key]
+        except KeyError:
+            raise Exception("Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys())))
 
 
