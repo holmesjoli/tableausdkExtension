@@ -1,6 +1,6 @@
 # tableausdkExtension
 
-tableausdkExtension builds on the [Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm#SDK/tableau_sdk_using_python.htm%3FTocPath%3D_____4) python package. 
+tableausdkExtension builds on the [Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm#SDK/tableau_sdk_using_python.htm%3FTocPath%3D_____4) python package.
 
 ## About Tableau SDK
 
@@ -12,15 +12,15 @@ Users may wonder why this is useful since Tableau already has many data connecti
 
 #### Pipeline Automation
 
-However, many people who touch data prefer to do management and data validation in tradition data analysis software and then connect the cleaned data to Tableau. Combining data validation, data management, and extract creation into one Python script is also very useful for automatting pipelines. 
+However, many people who touch data prefer to do management and data validation in tradition data analysis software and then connect the cleaned data to Tableau. Combining data validation, data management, and extract creation into one Python script is also very useful for automatting pipelines.
 
 #### Best Practices
 
-Automatting, multiple parts of an ETL into one script helps save time, but also allows users to continue practicing best practices such as version controlling code. 
+Automatting, multiple parts of an ETL into one script helps save time, but also allows users to continue practicing best practices such as version controlling code.
 
 #### Explicit Type Declaration
 
-Additionally, building a Tableau extract through code is important because the extract requires the user to explicitly declare the types of each column in the dataset. Although,Tableau is very good at guessing column types, it still doesn't get it right 100% of the time, which then requires the user to manually change the column type in the Tableau UI. This is an important step for quality control. 
+Additionally, building a Tableau extract through code is important because the extract requires the user to explicitly declare the types of each column in the dataset. Although,Tableau is very good at guessing column types, it still doesn't get it right 100% of the time, which then requires the user to manually change the column type in the Tableau UI. This is an important step for quality control.
 
 ### What's in tableausdkExtension
 
@@ -31,62 +31,62 @@ The tableausdkExtension package simply builds on the tableausdk package and auto
 
 ### Build Environment
 
-It's recommended to build an environment, but not absolutely necessary. TableausdkExtension has been tested on the included environment however. 
+It's recommended to build an environment, but not absolutely necessary. TableausdkExtension has been tested on the included environment however.
 
-1. Create the environment `conda create --name tableau --file requirements.txt`
-2. Activate the environment `source activate tableau` 
+1.  Create the environment `conda create --name tableau --file requirements.txt`
+2.  Activate the environment `source activate tableau`
 
 Note: environment can be named whatever, it doesn't have to be called tableau
 
 ### tableausdk
 
-1. Download [tableauSDK package](https://downloads.tableau.com/tssoftware/Tableau-SDK-Python-Win-64Bit-10-3-19.zip)
-2. Move the downloaded package from `Downloads` to the folder where you keep your Python repositories and rename the file to tableausdk.
-3. Install the package. In Bash (Terminal/Command Line) navigate to the place where the package is stored. Navigate to the top folder, e.g. `cd tableausdk`. Then build and install the package using the following commands. 
+1.  Download [tableauSDK package](https://downloads.tableau.com/tssoftware/Tableau-SDK-Python-Win-64Bit-10-3-19.zip)
+2.  Move the downloaded package from `Downloads` to the folder where you keep your Python repositories and rename the file to tableausdk.
+3.  Install the package. In Bash (Terminal/Command Line) navigate to the place where the package is stored. Navigate to the top folder, e.g. `cd tableausdk`. Then build and install the package using the following commands.
 
-```
-python setup.py build
-python setup.py install
+```python
+    python setup.py build
+    python setup.py install
 ```
 
 ### tableausdkExtension
 
-1. Clone the [repository](https://github.com/holmesjoli/tableausdkExtension)
-2. Install the package by navigating to the project folder and installing `pip install -e .`
+1.  Clone the [repository](https://github.com/holmesjoli/tableausdkExtension)
+2.  Install the package by navigating to the project folder and installing `pip install -e .`
 
-The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference(Named tc2018_sample.py in the tableausdkExtension folder). 
+The tableausdkExtension package functions were developed based on code presented at the Tableau 2018 conference(Named tc2018_sample.py in the tableausdkExtension folder).
 
-* Code from the session can be found [here](https://www.dropbox.com/sh/lztdogubf20498e/AADJJpb_KO4g2m_CF1-SSc_Sa/TC18%20-%20Developer%20Track/Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models?dl=0&subfolder_nav_tracking=1). 
-* A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be). 
-* A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf). 
+-   Code from the session can be found [here](https://www.dropbox.com/sh/lztdogubf20498e/AADJJpb_KO4g2m_CF1-SSc_Sa/TC18%20-%20Developer%20Track/Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models?dl=0&subfolder_nav_tracking=1).
+-   A video of the session can be found [here](https://www.youtube.com/watch?v=kk01bWEALXs&feature=youtu.be).
+-   A PDF of the powerpoint slides from the session can be found [here](https://tc18.tableau.com/sites/default/files/session/assets/18BI-081_Leveraging%20the%20Extract%20API%20to%20build%20sophisticated%20data%20models.pdf).
 
 #### Sample Code
 
-```
+```python
 import pandas as pd
 
 from create_extract import create_extract
 
 filename = "test_file.hyper"
 df = pd.DataFrame({"col1": [1,2,3,4], 
-                   "col2": ["a", "b", "c", "d"],
-                   "col3": [1.0, 2.0, 3.0, 4.0]})
+                    "col2": ["a", "b", "c", "d"],
+                    "col3": [1.0, 2.0, 3.0, 4.0]})
 
 col_types = {"col1": "INTEGER",
-             "col2": "CHAR_STRING",
-             "col3": "DOUBLE"}
+                "col2": "CHAR_STRING",
+                "col3": "DOUBLE"}
 
 create_extract(filename, df, col_types)
 ```
 
 The class `create_extract` takes three inputs, filename, df, col_types
 
-* **filename** is the filename of the Tableau extract file, it must have the extension `.hyper`
-* **df** is the dataframe to convert to a hyper file
-* **col_types** is a mapping of column names to column types as a dictionary. The excepted column types are: INTEGER, CHAR_STRING, DOUBLE, BOOLEAN, DATETIME, DATE, SPATIAL. 
+-   **filename** is the filename of the Tableau extract file, it must have the extension `.hyper`
+-   **df** is the dataframe to convert to a hyper file
+-   **col_types** is a mapping of column names to column types as a dictionary. The excepted column types are: INTEGER, CHAR_STRING, DOUBLE, BOOLEAN, DATETIME, DATE, SPATIAL.
 
 Running create_extract generates three files in the directory which the code is run from:
 
-* filename.hyper
-* DataExtract.log
-* hyper_db
+-   filename.hyper
+-   DataExtract.log
+-   hyper_db
