@@ -14,7 +14,6 @@ class create_extract(object):
         :param col_types: a mapping of column names to column types, e.g. {VAR1: INTEGER}
         :type col_types: dct
         """
-        
         self.df = df
         self.filename = filename
         self.col_types = col_types
@@ -25,13 +24,11 @@ class create_extract(object):
 
     def checkFileExt(self):
         """Checks that the file extension is .hyper"""
-
         if not self.filename.endswith(".hyper"):
             raise Exception("Filename must end with .hyper")
 
     def setUp(self):
         """Setup for the extract creation"""
-
         self.checkFileExt()
         ExtractAPI.initialize()
         self.extract = Extract(self.filename)
@@ -39,7 +36,6 @@ class create_extract(object):
 
     def createSchema(self):
         """Creates the table schema"""
-
         schema = TableDefinition()
         schema.setDefaultCollation(Collation.EN_GB)
 
@@ -47,7 +43,7 @@ class create_extract(object):
 
             schema_type = map_schema().get_type(self.col_types[key])
             schema.addColumn(key, schema_type)
-            
+
         self.extract.addTable('Extract', schema)
 
     def populateExtract(self):
@@ -55,13 +51,13 @@ class create_extract(object):
 
         table = self.extract.openTable('Extract')
         schema = table.getTableDefinition()
-           
+
         for idx, row in self.df.iterrows():
 
             extract_row = Row(schema)
 
             for jdx, key in enumerate(self.col_types):
-                
+
                 func = map_cols(extract_row).get_type(self.col_types[key])
                 func(jdx, self.df.iloc[idx][key])
 
@@ -75,6 +71,6 @@ class create_extract(object):
 
     def tearDown(self):
         """Tear down hyper file setup"""
-        
+
         self.extract.close()
         ExtractAPI.cleanup()

@@ -1,12 +1,11 @@
 from tableausdk.Types import Type
 
 class map_schema(object):
-    
+
     def __init__(self):
         """
         A dictionary of schema types
         """
-
         self.type = {"CHAR_STRING": Type.CHAR_STRING,
                     "INTEGER": Type.INTEGER,
                     "DOUBLE": Type.DOUBLE,
@@ -14,23 +13,23 @@ class map_schema(object):
                     "DATETIME": Type.DATETIME,
                     "DATE": Type.DATE,
                     "SPATIAL": Type.SPATIAL}
-    
+
     def get_type(self, key):
         """
         Returns the type based off the key
         """
-        try: 
+        try:
             return self.type[key]
         except KeyError:
-            raise Exception("Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys())))
+            e = "Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys()))
+            raise Exception(e)
 
 class map_cols(object):
 
     def __init__(self, extract_row):
         """
-        A dictionary of functions to create to populate the columns 
+        A dictionary of functions to create to populate the columns.
         """
-
         self.type = {"NULL": lambda col_idx, value: extract_row.setNull(col_idx, value),
                     "CHAR_STRING": lambda col_idx, value: extract_row.setCharString(col_idx, value),
                     "INTEGER": lambda col_idx, value: extract_row.setLongInteger(col_idx, value),
@@ -43,9 +42,10 @@ class map_cols(object):
 
     def get_type(self, key):
         """
-        Returns the type based off the key
+        Returns the type based off the key.
         """
-        try: 
+        try:
             return self.type[key]
         except KeyError:
-            raise Exception("Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys())))
+            e = "Please check col_types spelling/case. These are the excepted types:\n{}".format("\n".join(self.type.keys()))
+            raise Exception()
