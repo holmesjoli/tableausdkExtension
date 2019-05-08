@@ -1,4 +1,4 @@
-# tableausdkExtension
+# Tableausdk Extension
 
 tableausdkExtension builds on the [Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm#SDK/tableau_sdk_using_python.htm%3FTocPath%3D_____4) python package.
 
