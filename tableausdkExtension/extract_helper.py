@@ -1,5 +1,4 @@
 from tableausdk.Types import Type
-from tableausdk.HyperExtract import Row
 
 class map_schema(object):
     

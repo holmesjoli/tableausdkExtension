@@ -1,6 +1,5 @@
-from tableausdk.Exceptions import TableauException
 from tableausdk.HyperExtract import ExtractAPI, Extract, TableDefinition, Row
-from tableausdk.Types import Type, Collation
+from tableausdk.Types import Collation
 
 from extract_helper import map_schema, map_cols
 
