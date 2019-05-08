@@ -1,7 +1,7 @@
 # tableausdkExtension
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/978fb2b5516c443c9ec9e0c9cd86affb)](https://www.codacy.com/app/holmesjoli/tableausdkExtension?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=holmesjoli/tableausdkExtension&amp;utm_campaign=Badge_Grade)
-[![Build status](https://travis-ci.org/holmesjoli/travis-lab.svg?master)](https://travis-ci.org/holmesjoli/tableausdkExtension)
+[![Build status](https://travis-ci.org/holmesjoli/tableausdkExtension.svg?branch=master)](https://travis-ci.org/holmesjoli/tableausdkExtension)
 
 tableausdkExtension builds on the [Tableau SDK](https://onlinehelp.tableau.com/current/api/sdk/en-us/help.htm#SDK/tableau_sdk_using_python.htm%3FTocPath%3D_____4) python package.
 
