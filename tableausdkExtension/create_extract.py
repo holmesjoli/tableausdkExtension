@@ -1,7 +1,7 @@
 from tableausdk.HyperExtract import ExtractAPI, Extract, TableDefinition, Row
 from tableausdk.Types import Collation
 
-from extract_helper import map_schema, map_cols
+from tableausdkExtension.extract_helper import map_schema, map_cols
 
 class create_extract(object):
 
