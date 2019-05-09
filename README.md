@@ -38,7 +38,7 @@ It's recommended to build an environment, but not absolutely necessary. Tableaus
 
 Note: environment can be named whatever, it doesn't have to be called tableau
 
-### tableausdk
+### Install tableausdk package
 
 1.  Download [tableauSDK package](https://downloads.tableau.com/tssoftware/Tableau-SDK-Python-Win-64Bit-10-3-19.zip)
 2.  Move the downloaded package from `Downloads` to the folder where you keep your Python repositories and rename the file to tableausdk.
@@ -49,7 +49,7 @@ Note: environment can be named whatever, it doesn't have to be called tableau
     python setup.py install
 ```
 
-### tableausdkExtension
+### Install tableausdkExtension package
 
 1.  Clone the [repository](https://github.com/holmesjoli/tableausdkExtension)
 2.  Install the package by navigating to the project folder and installing `pip install -e .`
