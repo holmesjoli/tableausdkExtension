@@ -4,5 +4,7 @@ python:
   - "3.6"
 environment: 
   - conda env create -f environment.yml
+install:
+  - pip install -r requirements.txt
 script:
-  - tableausdkExtension/tests/test_create_extract.py
+  - tableauExtension/tests/test_create_extract.py
