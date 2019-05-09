@@ -1,3 +1,14 @@
 language: python
 rvm:
   - 3.7.2
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+before_install:
+  - 
+install: 
+  - conda env create -f environment.yml
+script: 
+  - python create_extract.py
+  - python extract_helper.py
