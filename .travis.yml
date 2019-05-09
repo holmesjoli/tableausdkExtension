@@ -7,6 +7,3 @@ python:
   - "3.7"
 environment: 
   - conda env create -f environment.yml
-script: 
-  - python create_extract.py
-  - python extract_helper.py
