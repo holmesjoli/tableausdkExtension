@@ -5,4 +5,4 @@ python:
 environment: 
   - conda env create -f environment.yml
 script:
-  - tests/test_create_extract.py
+  - tableausdkExtension/tests/test_create_extract.py
