@@ -52,7 +52,7 @@ class create_extract(object):
         table = self.extract.openTable('Extract')
         schema = table.getTableDefinition()
 
-        for idx, row in self.df.iterrows():
+        for idx in range(0, self.df.shape[0]):
 
             extract_row = Row(schema)
 
